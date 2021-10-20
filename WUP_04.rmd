@@ -45,12 +45,21 @@ boxplot(WORDSUM~DEGREE,data=mydata)
 ``` 
 
 
+
 The middle box and the box that is located on the far right of the box plot can go completely under the box to the left labeled "graduate". The means from the two are entirely different from eachother. If you were to run a test with the two boxes ( the one in the middle and the one on the far right) it is likely that the scores on the WORDSUM test are lower than the boxes labeled "Bachelor", "Graduate", and "Junior College".
 
 
 ### Numerical Descriptive Results
 
 <!--Numerical results go here. Use the numerical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+favstats(WORDSUM~DEGREE,data=mydata)
+```
+
+
+The individuals with degrees from a junior college, a bachelor's degree, and a graduate school degree scored a higher mean result on the WORDSUM test than those with only a high school and the junior high school degree. The numerical results above show that individuals with bachelor, junior college, or graduate school degrees have a mean of 9 or higher. The junior high school and the high school students scored a mean of 8 or less.
+
 
 ## Inferential Results
 
