@@ -27,6 +27,8 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
+We will be using the Numerical
+
 # Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
@@ -73,10 +75,11 @@ summary.aov(model1)
 The p-value is very small which signifies that the probability that the null hypothesis is true is highly unlikely; therefore we must reject the null hypothesis. There is a significant difference in average score on the WORDSUM test between at least two levels of DEGREE.
 
 
+
+
 ```{r}
-#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
 par(mar = c(3, 15, 2, 2))
-plot(TukeyHSD(model1,las=2,conf.level=.99))
+plot(TukeyHSD(model1,conf.level=.95),las=2)
 ```
 
 
@@ -86,3 +89,5 @@ The Tukey test above shows that HIGHSCHOOL and GRADUATE are different from each 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+The original question of whether a difference exists between the average score on the WORDSUM test and the level of schooling and degree obtained is that there is a difference. The boxplot and the research data showed that individuals with a degree from a junior college, a bachelor's degree or a graduate school degree scored higher on the test. The WORDSUM test is an interactive vocabulary test which gives results in the form of an IQ test. We also established that those who had a degree from a post-secondary education scored an average of 9 or higher and those who only had a degree from high school or junior high school scored a mean of 8 or less. The p-value was also very small at 0.000236, so we rejected the $H_0$. Because there was a significant difference, we used Tukey HSD and we were able to conclude that the 95% confidence level for HIGHSCHOOL and GRADUATE and LT HIGHSCHOOL and GRADUATE were different.
